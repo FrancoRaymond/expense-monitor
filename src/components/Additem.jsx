@@ -17,11 +17,8 @@ const Additem = () => {
       name: itemName,
       amnt: amount,
     };
-
-    console.log(newItem)
-    
+ 
     setAddedItems((prevItems) => [...prevItems, newItem]);
-
     setItemName('');
     setAmount('');
   }
@@ -38,7 +35,7 @@ const Additem = () => {
             onChange={(e) => setItemName(e.target.value)}
             value={itemName}
             name='Text'
-            className='border border-gray-200 rounded-md w-full py-1 px-2 mt-1 outline-none bg-blue-100 focus:py-2 transition duration-100'
+            className='border border-gray-200 rounded-md w-full py-1 sm:py-2 sm:px-3 px-2 mt-1 outline-none bg-blue-100 focus:py-2 transition duration-100'
             type='text'
             placeholder='Enter text...'
           />
@@ -51,13 +48,13 @@ const Additem = () => {
             onChange={(e) => setAmount(e.target.value)}
             value={amount}
             name='Amount'
-            className='border border-gray-200 rounded-md w-full py-1 px-2 mt-1 outline-none bg-blue-100 focus:py-2 transition duration-100'
+            className='border border-gray-200 rounded-md w-full py-1 px-2 sm:py-2 sm:px-3 mt-1 outline-none bg-blue-100 focus:py-2 transition duration-100'
             type='text'
             placeholder='Enter amount...'
           />
         </label>
         <button
-          className='bg-blue-700 text-white mt-3 py-1 active:bg-blue-800 transition duration-100 rounded-md w-10/12 mx-auto active:scale-110'
+          className='bg-blue-700 text-white mt-3 py-1 sm:py-2 active:bg-blue-800 transition duration-100 rounded-md w-10/12 mx-auto active:scale-110'
           type='submit'
         >
           Submit

@@ -5,13 +5,12 @@ import { useAppContext } from '../App';
 const History = () => {
 
   const {addedItems, setAddedItems} = useAppContext();
-  
+
   const handleDelete = (indexToDelete) => {
     setAddedItems((prevItems) =>
       prevItems.filter((_, index) => index !== indexToDelete)
     );
   };
-
 
   return (
     <div>
@@ -29,7 +28,7 @@ const History = () => {
             key={index}
             className={`border-r-8 ${
               item.amnt[0] === '+' ? 'border-green-500' : 'border-red-600'
-            } bg-gray-100 flex justify-between px-2 py-1 w-full rounded-[0.2rem] overflow-hidden`}
+            } bg-gray-100 flex justify-between px-2 py-1 sm:py-2 sm:px-3 w-full rounded-[0.2rem] overflow-hidden`}
           >
             <div className='flex gap-4'>
               <img 
@@ -39,7 +38,7 @@ const History = () => {
               />
               <p className='text-gray-700'>{item.name}</p>
             </div>
-            <p>{parseInt(item.amnt.slice(1))}</p>
+            <p>{parseFloat(item.amnt.slice(1)).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
           </div>
         )))}
       </div>
